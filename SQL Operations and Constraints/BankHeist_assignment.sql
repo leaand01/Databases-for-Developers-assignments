@@ -48,7 +48,8 @@ go
 
 -- Kombiner ovenstående i en query som giver/opsummerer resultatet:
 
-
+/*
+set statistics time on;  -- mål hvor hurtigt query er
 with
 	-- lav tabel som indeholder den berøvede kundes oplysninger (består af et join mellem 3 tabeller)
 	robbedCustomer as
@@ -75,17 +76,77 @@ with
 		inner join robbedCustomer rc on ea.timestamp = rc.timestamp
 		)
 -- lav query baseret på ovenstående 2 tabeller
-SELECT
+select
     rc.Amount as stolenAmount,
     --rc.AccountID as customerAccount,
     --rc.CustomerID,
     c.Name as customerName,
-	--ge.ActionID,
     ge.Timestamp as timeOfTheft,
+	--ge.ActionID,
     --ge.EmployeeID as idOfGuiltyEmployee,
     e.Name as guiltyEmployeeName,
 	e.Position as guiltyEmployeePosition
-FROM robbedCustomer rc
-INNER JOIN Customers c ON rc.CustomerID = c.CustomerID
-LEFT JOIN guiltyEmployee ge ON rc.Timestamp = ge.Timestamp
-LEFT JOIN Employees e ON ge.EmployeeID = e.EmployeeID;
+from robbedCustomer rc
+inner join Customers c ON rc.CustomerID = c.CustomerID
+left join guiltyEmployee ge ON rc.Timestamp = ge.Timestamp
+left join Employees e ON ge.EmployeeID = e.EmployeeID;
+set statistics time off;
+*/
+
+
+-- forsøgt optimeret ovenstående i sidste select statement og tilføje variable i konstruerede tabeller
+
+set statistics time on;
+with
+	-- lav tabel som indeholder den berøvede kundes oplysninger (består af et join mellem 3 tabeller)
+	robbedCustomer as
+		(select
+			t.amount,
+			t.accountID,
+			t.type,
+			t.timestamp,
+			c.customerid,
+			c.Name			-- tilføjet
+		from Transactions t
+		inner join Accounts a on t.AccountID = a.AccountID
+		inner join Customers c on a.CustomerID = c.CustomerID
+		where t.amount = (select max(amount) from Transactions where type = 'withdrawal')
+		),
+	-- lav tabel som indeholder oplysninger om den skyldige medarbejder (join af 3 tabeller)
+	guiltyEmployee as 
+		(
+		select
+			ea.actionID,
+			ea.timestamp,
+			ea.employeeID,
+			ea.actiontype,
+			e.Name,			-- tilføjet
+			e.Position		-- tilføjet
+		from EmployeeActions ea
+		inner join robbedCustomer rc on ea.timestamp = rc.timestamp
+		inner join Employees e on ea.EmployeeID = e.EmployeeID			-- tilføjet
+		)
+-- lav query baseret på ovenstående 2 tabeller
+select
+    rc.Amount as stolenAmount,
+    --rc.AccountID as customerAccount,
+    --rc.CustomerID,
+	rc.Name as customerName,
+    --ge.ActionID,
+    ge.Timestamp as timeOfTheft,
+	ge.Name as guiltyEmployeeName,
+	ge.Position as guiltyEmployeePosition
+    --ge.EmployeeID as idOfGuiltyEmployee
+from robbedCustomer rc
+left join guiltyEmployee ge ON rc.Timestamp = ge.Timestamp		-- ved ovenstående tilføjelser behøver jeg ikke joine med table Customers og Employees her
+set statistics time off;										-- hmm kan ikke måle hvilken en query der er hurtigst?
+
+
+/*
+Vigtigt ift ovenstående og Query Trees.
+
+Afhængig af hvilke variable vil have ud i nederste query kan jeg lave om i nederste query.
+Hvis vil have udkommenteret ovenstående variable burde jeg optimere mit query tree, således at min query er mest effektiv og hurtig,
+ved ikke at inkludere unødvendige variable i mit select statement i de konstruerede queryies defineret under with-statementet.
+
+*/
