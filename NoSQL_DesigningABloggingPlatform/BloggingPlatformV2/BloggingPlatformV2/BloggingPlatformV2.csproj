@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.29.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BloggingPlatformV2.Core\BloggingPlatformV2.Core.csproj" />
+    <ProjectReference Include="..\BloggingPlatformV2.DataAccess\BloggingPlatformV2.DataAccess.csproj" />
+    <ProjectReference Include="..\BloggingPlatformV2.Infrastructur\BloggingPlatformV2.Infrastructur.csproj" />
+  </ItemGroup>
+
+</Project>

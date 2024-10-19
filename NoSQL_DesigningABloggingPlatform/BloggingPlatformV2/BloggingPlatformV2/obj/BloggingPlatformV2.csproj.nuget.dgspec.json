@@ -1,0 +1,269 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2\\BloggingPlatformV2.csproj": {}
+  },
+  "projects": {
+    "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Core\\BloggingPlatformV2.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Core\\BloggingPlatformV2.Core.csproj",
+        "projectName": "BloggingPlatformV2.Core",
+        "projectPath": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Core\\BloggingPlatformV2.Core.csproj",
+        "packagesPath": "C:\\Users\\flint\\.nuget\\packages\\",
+        "outputPath": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\flint\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.29.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.DataAccess\\BloggingPlatformV2.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.DataAccess\\BloggingPlatformV2.DataAccess.csproj",
+        "projectName": "BloggingPlatformV2.DataAccess",
+        "projectPath": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.DataAccess\\BloggingPlatformV2.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\flint\\.nuget\\packages\\",
+        "outputPath": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\flint\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Core\\BloggingPlatformV2.Core.csproj": {
+                "projectPath": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Core\\BloggingPlatformV2.Core.csproj"
+              },
+              "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Infrastructur\\BloggingPlatformV2.Infrastructur.csproj": {
+                "projectPath": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Infrastructur\\BloggingPlatformV2.Infrastructur.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.29.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Infrastructur\\BloggingPlatformV2.Infrastructur.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Infrastructur\\BloggingPlatformV2.Infrastructur.csproj",
+        "projectName": "BloggingPlatformV2.Infrastructur",
+        "projectPath": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Infrastructur\\BloggingPlatformV2.Infrastructur.csproj",
+        "packagesPath": "C:\\Users\\flint\\.nuget\\packages\\",
+        "outputPath": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Infrastructur\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\flint\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.29.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2\\BloggingPlatformV2.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2\\BloggingPlatformV2.csproj",
+        "projectName": "BloggingPlatformV2",
+        "projectPath": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2\\BloggingPlatformV2.csproj",
+        "packagesPath": "C:\\Users\\flint\\.nuget\\packages\\",
+        "outputPath": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\flint\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Core\\BloggingPlatformV2.Core.csproj": {
+                "projectPath": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Core\\BloggingPlatformV2.Core.csproj"
+              },
+              "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.DataAccess\\BloggingPlatformV2.DataAccess.csproj": {
+                "projectPath": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.DataAccess\\BloggingPlatformV2.DataAccess.csproj"
+              },
+              "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Infrastructur\\BloggingPlatformV2.Infrastructur.csproj": {
+                "projectPath": "C:\\easv\\Databases for Developers\\Opgaver\\Databases-for-Developers-assignments\\NoSQL_DesigningABloggingPlatform\\BloggingPlatformV2\\BloggingPlatformV2.Infrastructur\\BloggingPlatformV2.Infrastructur.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.29.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
