@@ -1,5 +1,5 @@
 ﻿using BloggingPlatformV2.Core.Entities;
-using BloggingPlatformV2.Core.Interfaces;
+//using BloggingPlatformV2.Core.Interfaces; //removed this as could not get it to work. THus Services are not dependent on Interfaces folder
 using BloggingPlatformV2.Core.Services;
 using BloggingPlatformV2.Core.IRepositories;
 using BloggingPlatformV2.Infrastructur;

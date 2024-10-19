@@ -18,7 +18,6 @@ namespace BloggingPlatformV2.DataAccess.Repositories
             _comments = dbConnection.GetCollection<Comment>("comments");
         }
 
-
         public async Task<Comment> AddComment(Comment comment)
         {
             await _comments.InsertOneAsync(comment);

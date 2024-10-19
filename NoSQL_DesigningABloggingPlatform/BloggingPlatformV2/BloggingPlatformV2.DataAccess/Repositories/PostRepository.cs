@@ -36,7 +36,6 @@ namespace BloggingPlatformV2.DataAccess.Repositories
             await _posts.UpdateOneAsync(filter, update);
         }
 
-
         public async Task UpdatePosts(FilterDefinition<Post> filter, UpdateDefinition<Post> update)
         {
             await _posts.UpdateManyAsync(filter, update); // Opdaterer alle posts der matcher filteret

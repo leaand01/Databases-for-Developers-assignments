@@ -1,4 +1,5 @@
-﻿using BloggingPlatformV2.Core.Entities;
+﻿/*
+using BloggingPlatformV2.Core.Entities;
 using MongoDB.Bson;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -12,3 +13,4 @@ namespace BloggingPlatformV2.Core.Interfaces
         Task UpdatePostContent(ObjectId postId, string newContent);
     }
 }
+*/
