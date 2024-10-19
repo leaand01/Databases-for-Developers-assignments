@@ -1,6 +1,6 @@
 ﻿using MongoDB.Driver;
 
-namespace BloggingPlatformV2.Infrastructur // Sørg for at namespace matcher
+namespace BloggingPlatformV2.Infrastructur
 {
     public class MongoDbConnection
     {
@@ -8,12 +8,13 @@ namespace BloggingPlatformV2.Infrastructur // Sørg for at namespace matcher
 
         public MongoDbConnection(MongoClient mongoClient, string databaseName)
         {
-            _database = mongoClient.GetDatabase(databaseName);
+            _database = mongoClient.GetDatabase(databaseName); // returner reference til den angivne mongoDB-database
         }
 
         public IMongoCollection<T> GetCollection<T>(string collectionName)
         {
             return _database.GetCollection<T>(collectionName);
+            // Returnerer en samling af den angivne dokumenttype fra MongoDB-databasen, f.eks. user dokumenter
         }
     }
 }

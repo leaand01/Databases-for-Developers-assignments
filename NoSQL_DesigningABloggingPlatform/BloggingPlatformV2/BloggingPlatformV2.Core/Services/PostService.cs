@@ -12,13 +12,7 @@ namespace BloggingPlatformV2.Core.Services
     {
         private readonly IPostRepository _postRepository;
         private readonly ICommentRepository _commentRepository;
-        //private readonly IDataAccess _dataAccess;
-        /*
-        public PostService(IDataAccess dataAccess)
-        {
-            _dataAccess = dataAccess;
-        }
-        */
+
         public PostService(IPostRepository postRepository, ICommentRepository commentRepository)
         {
             _postRepository = postRepository;
@@ -42,7 +36,6 @@ namespace BloggingPlatformV2.Core.Services
         }
 
         //tilføjet
-        // Opdaterer brugernavn i alle posts for en bruger
         public async Task UpdateUsernameInPosts(ObjectId userId, string newUsername)
         {
             var filter = Builders<Post>.Filter.Eq(p => p.UserId, userId);
@@ -50,19 +43,15 @@ namespace BloggingPlatformV2.Core.Services
             await _postRepository.UpdatePosts(filter, update);
         }
 
-        //tilføjet
         // Henter alle kommentarer for et givent post
         public async Task<List<Comment>> GetCommentsByPostId(ObjectId postId)
         {
             return await _commentRepository.GetCommentsByPostId(postId);
         }
 
-        // tilføjet
         public async Task UpdatePost(Post post)
         {
-            await _postRepository.UpdatePost(post); // Sørg for at denne metode findes i IDataAccess
+            await _postRepository.UpdatePost(post);
         }
-
-
     }
 }

@@ -9,13 +9,10 @@ using System.Threading.Tasks;
 
 namespace BloggingPlatformV2.DataAccess.Repositories
 {
-
     public class CommentRepository : ICommentRepository
     {
         private readonly IMongoCollection<Comment> _comments;
 
-
-        //public CommentRepository(IMongoDatabase dbConnection)
         public CommentRepository(MongoDbConnection dbConnection)
         {
             _comments = dbConnection.GetCollection<Comment>("comments");
@@ -36,9 +33,7 @@ namespace BloggingPlatformV2.DataAccess.Repositories
         //tilføjet
         public async Task UpdateComments(FilterDefinition<Comment> filter, UpdateDefinition<Comment> update)
         {
-            await _comments.UpdateManyAsync(filter, update);
+            await _comments.UpdateManyAsync(filter, update); // opdater alle comments-objekter som matcher filteret
         }
-
-
     }
 }

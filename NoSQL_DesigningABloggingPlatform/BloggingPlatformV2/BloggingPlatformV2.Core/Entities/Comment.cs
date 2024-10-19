@@ -5,6 +5,8 @@ namespace BloggingPlatformV2.Core.Entities
 {
     public class Comment
     {
+        // Definer Comment
+
         [BsonId]
         public ObjectId Id { get; set; }
         public ObjectId UserId { get; set; } // Referencer til ejer
@@ -13,8 +15,7 @@ namespace BloggingPlatformV2.Core.Entities
         public string Content { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow; // Tidsstempel
 
-        //tilføjet
-        //Hvis du har brug for at gemme brugernavnet, skal du tilføje en egenskab her
+        // tilføjet - username på bruger der tilføjer kommentar
         public string Username { get; set; }
     }
 }

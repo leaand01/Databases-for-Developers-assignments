@@ -10,18 +10,16 @@ using System.Threading.Tasks;
 
 namespace BloggingPlatformV2.DataAccess.Repositories
 {
-
     public class UserRepository : IUserRepository
     {
         private readonly IMongoCollection<User> _users;
 
-        //public UserRepository(IMongoDatabase dbConnection)
         public UserRepository(MongoDbConnection dbConnection)
         {
-            //_users = database.GetCollection<User>("users");
             _users = dbConnection.GetCollection<User>("users");
         }
 
+        // Definer logikken for funktionaliteterne i IUserRepository
 
         public async Task<User> CreateUser(User user)
         {
@@ -48,7 +46,7 @@ namespace BloggingPlatformV2.DataAccess.Repositories
 
 
         //tilføjet
-        public async Task UpdateUser(User user)
+        public async Task UpdateUser(User user) // opdater alle ændringer på hele user-objektet
         {
             var filter = Builders<User>.Filter.Eq(u => u.Id, user.Id);
             await _users.ReplaceOneAsync(filter, user);

@@ -5,6 +5,8 @@ namespace BloggingPlatformV2.Core.Entities
 {
     public class User
     {
+        //Definer user
+
         [BsonId]
         public ObjectId Id { get; set; }
         public string Username { get; set; }

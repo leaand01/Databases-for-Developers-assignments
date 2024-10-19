@@ -5,6 +5,8 @@ namespace BloggingPlatformV2.Core.Entities
 {
     public class Blog
     {
+        // Definer Blog
+
         [BsonId]
         public ObjectId Id { get; set; }
         public ObjectId UserId { get; set; } // Referencer til ejer

@@ -11,13 +11,7 @@ namespace BloggingPlatformV2.Core.Services
     public class CommentService
     {
         private readonly ICommentRepository _commentRepository;
-        //private readonly IDataAccess _dataAccess;
-        /*
-        public CommentService(IDataAccess dataAccess)
-        {
-            _dataAccess = dataAccess;
-        }
-        */
+     
         public CommentService(ICommentRepository commentRepository)
         {
             _commentRepository = commentRepository;
@@ -34,23 +28,12 @@ namespace BloggingPlatformV2.Core.Services
             return await _commentRepository.GetCommentsByPostId(postId);
         }
 
-        //tilføjet
-        /*
         public async Task UpdateUsernameInComments(ObjectId userId, string newUsername)
         {
             var filter = Builders<Comment>.Filter.Eq(c => c.UserId, userId);
-            var update = Builders<Comment>.Update.Set(c => c.Username, newUsername);
-            await _commentCollection.UpdateManyAsync(filter, update);
-        }
-        */
-        // Opdaterer brugernavn i alle kommentarer for en bruger
-        public async Task UpdateUsernameInComments(ObjectId userId, string newUsername)
-        {
-            var filter = Builders<Comment>.Filter.Eq(c => c.UserId, userId);
-            var update = Builders<Comment>.Update.Set(c => c.Content, newUsername); // Opdaterer indholdet med det nye brugernavn
+            var update = Builders<Comment>.Update.Set(c => c.Content, newUsername); // Opdaterer Content med det nye username
 
-            // Udfør opdatering gennem IDataAccess
-            await _commentRepository.UpdateComments(filter, update); // Sørg for at implementere UpdateComments i IDataAccess
+            await _commentRepository.UpdateComments(filter, update);
         }
     }
 }

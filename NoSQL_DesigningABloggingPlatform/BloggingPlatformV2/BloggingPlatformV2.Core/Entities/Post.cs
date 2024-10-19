@@ -5,6 +5,8 @@ namespace BloggingPlatformV2.Core.Entities
 {
     public class Post
     {
+        //Definer Post
+
         [BsonId]
         public ObjectId Id { get; set; }
         public ObjectId UserId { get; set; } // Referencer til ejer
@@ -14,7 +16,7 @@ namespace BloggingPlatformV2.Core.Entities
         public List<ObjectId> Comments { get; set; } = new List<ObjectId>(); // Referencer til kommentarer
 
 
-        // Tilføjet felt til at gemme brugernavnet
-        public string AuthorUsername { get; set; } // Brugernavn tilknyttet til post
+        // Tilføjet - blog/post ejerens brugernavn
+        public string AuthorUsername { get; set; }
     }
 }

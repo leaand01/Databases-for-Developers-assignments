@@ -10,12 +10,10 @@ using System.Threading.Tasks;
 
 namespace BloggingPlatformV2.DataAccess.Repositories
 {
-
     public class BlogRepository : IBlogRepository
     {
         private readonly IMongoCollection<Blog> _blogs;
 
-        //public BlogRepository(IMongoDatabase dbConnection)
         public BlogRepository(MongoDbConnection dbConnection)
         {
             _blogs = dbConnection.GetCollection<Blog>("blogs");
@@ -41,7 +39,7 @@ namespace BloggingPlatformV2.DataAccess.Repositories
         }
 
         //tilføjet
-        public async Task UpdateBlog(Blog blog)
+        public async Task UpdateBlog(Blog blog)  // opdater hele blog-objektet
         {
             var filter = Builders<Blog>.Filter.Eq(b => b.Id, blog.Id);
             await _blogs.ReplaceOneAsync(filter, blog);

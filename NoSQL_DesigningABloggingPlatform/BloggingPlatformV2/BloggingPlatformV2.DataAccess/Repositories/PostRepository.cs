@@ -9,12 +9,10 @@ using System.Threading.Tasks;
 
 namespace BloggingPlatformV2.DataAccess.Repositories
 {
-
     public class PostRepository : IPostRepository
     {
         private readonly IMongoCollection<Post> _posts;
 
-        //public PostRepository(IMongoDatabase dbConnection)
         public PostRepository(MongoDbConnection dbConnection)
         {
             _posts = dbConnection.GetCollection<Post>("posts");
@@ -42,12 +40,12 @@ namespace BloggingPlatformV2.DataAccess.Repositories
         // Implementering af UpdatePosts
         public async Task UpdatePosts(FilterDefinition<Post> filter, UpdateDefinition<Post> update)
         {
-            await _posts.UpdateManyAsync(filter, update); // Opdaterer alle indlæg der matcher filteret
+            await _posts.UpdateManyAsync(filter, update); // Opdaterer alle posts der matcher filteret
         }
 
 
         //tilføjet
-        public async Task UpdatePost(Post post)
+        public async Task UpdatePost(Post post)  // opdater specifik post
         {
             var filter = Builders<Post>.Filter.Eq(p => p.Id, post.Id);
             await _posts.ReplaceOneAsync(filter, post);
