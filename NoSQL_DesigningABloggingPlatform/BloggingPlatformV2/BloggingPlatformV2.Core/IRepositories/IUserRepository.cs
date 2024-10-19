@@ -11,9 +11,6 @@ namespace BloggingPlatformV2.Core.IRepositories
         Task UpdateUsername(ObjectId userId, string newUsername);
         Task<User> GetUserById(ObjectId userId);
         Task<List<User>> GetAllUsers();
-
-
-        //tilføjet
         Task UpdateUser(User user); 
     }
 }

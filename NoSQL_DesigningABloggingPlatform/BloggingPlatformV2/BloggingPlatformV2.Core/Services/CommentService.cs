@@ -31,7 +31,7 @@ namespace BloggingPlatformV2.Core.Services
         public async Task UpdateUsernameInComments(ObjectId userId, string newUsername)
         {
             var filter = Builders<Comment>.Filter.Eq(c => c.UserId, userId);
-            var update = Builders<Comment>.Update.Set(c => c.Content, newUsername); // Opdaterer Content med det nye username
+            var update = Builders<Comment>.Update.Set(c => c.PostAuthor, newUsername); // Opdaterer post auther med det nye username
 
             await _commentRepository.UpdateComments(filter, update);
         }

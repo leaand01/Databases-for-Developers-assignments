@@ -11,8 +11,6 @@ namespace BloggingPlatformV2.Core.IRepositories
         Task<List<Blog>> GetBlogsByUserId(ObjectId userId);
         Task UpdateBlogDescription(ObjectId blogId, string newDescription);
 
-
-        //tilføjet
         Task UpdateBlog(Blog blog);
     }
 }

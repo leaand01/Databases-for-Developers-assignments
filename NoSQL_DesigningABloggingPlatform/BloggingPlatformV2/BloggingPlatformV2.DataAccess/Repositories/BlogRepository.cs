@@ -38,7 +38,6 @@ namespace BloggingPlatformV2.DataAccess.Repositories
             await _blogs.UpdateOneAsync(filter, update);
         }
 
-        //tilføjet
         public async Task UpdateBlog(Blog blog)  // opdater hele blog-objektet
         {
             var filter = Builders<Blog>.Filter.Eq(b => b.Id, blog.Id);

@@ -11,7 +11,6 @@ namespace BloggingPlatformV2.Core.IRepositories
         Task<Comment> AddComment(Comment comment);
         Task<List<Comment>> GetCommentsByPostId(ObjectId postId);
 
-        //tilføjet
         Task UpdateComments(FilterDefinition<Comment> filter, UpdateDefinition<Comment> update);
     }
 }

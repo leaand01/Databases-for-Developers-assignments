@@ -37,7 +37,6 @@ namespace BloggingPlatformV2.Core.Services
             return await _userRepository.GetAllUsers();
         }
 
-        // tilføjet
         public async Task UpdateUser(User user)
         {
             await _userRepository.UpdateUser(user);

@@ -37,14 +37,11 @@ namespace BloggingPlatformV2.DataAccess.Repositories
         }
 
 
-        // Implementering af UpdatePosts
         public async Task UpdatePosts(FilterDefinition<Post> filter, UpdateDefinition<Post> update)
         {
             await _posts.UpdateManyAsync(filter, update); // Opdaterer alle posts der matcher filteret
         }
 
-
-        //tilføjet
         public async Task UpdatePost(Post post)  // opdater specifik post
         {
             var filter = Builders<Post>.Filter.Eq(p => p.Id, post.Id);

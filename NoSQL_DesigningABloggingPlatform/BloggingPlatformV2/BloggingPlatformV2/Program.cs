@@ -57,21 +57,24 @@ class Program
 
 
         // Funktionaliteter skulle implementere:
-        // Hent alle posts for en blog
+        Console.WriteLine("Implemented functionalities:");
+
+        // Hent alle posts for en given blog
         var postsForBlog = await blogService.GetPostsByBlogId(blog.Id);
-        Console.WriteLine($"Posts for Blog '{blog.Title}':");
+        Console.WriteLine($"All posts for Blog '{blog.Title}':");
         foreach (var p in postsForBlog) Console.WriteLine($" - {p.Title}");
 
         // Hent alle kommentarer for et post
         var commentsForPost = await postService.GetCommentsByPostId(post.Id);
-        Console.WriteLine($"Comments for Post '{post.Title}':");
+        Console.WriteLine($"All comments for Post '{post.Title}':");
         foreach (var c in commentsForPost) Console.WriteLine($" - {c.Content}");
 
         // Opdater indholdet af et post
-        await postService.UpdatePostContent(post.Id, "opdateret indhold");
-        Console.WriteLine("Post content updated.");
+        await postService.UpdatePostContent(post.Id, "altered the post content");
+        //Console.WriteLine("Post content updated.");
+        Console.WriteLine($"Post content updated of post '{post.Title}'.");
 
-        // Opdater brugernavn og opdater referencer i posts og comments
+        // Opdater username og opdater username referencer i posts og comments
         string newUsername = "Someone_is_Casper";
         await userService.UpdateUsername(user.Id, newUsername);
         await postService.UpdateUsernameInPosts(user.Id, newUsername);

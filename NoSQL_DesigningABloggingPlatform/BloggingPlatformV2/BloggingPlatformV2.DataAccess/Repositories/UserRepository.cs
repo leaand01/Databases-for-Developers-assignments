@@ -44,8 +44,6 @@ namespace BloggingPlatformV2.DataAccess.Repositories
             return await _users.Find(_ => true).ToListAsync();
         }
 
-
-        //tilføjet
         public async Task UpdateUser(User user) // opdater alle ændringer på hele user-objektet
         {
             var filter = Builders<User>.Filter.Eq(u => u.Id, user.Id);

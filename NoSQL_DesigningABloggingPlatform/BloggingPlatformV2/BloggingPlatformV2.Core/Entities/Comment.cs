@@ -9,13 +9,12 @@ namespace BloggingPlatformV2.Core.Entities
 
         [BsonId]
         public ObjectId Id { get; set; }
-        public ObjectId UserId { get; set; } // Referencer til ejer
-        public ObjectId BlogId { get; set; } // Referencer til blog
-        public ObjectId PostId { get; set; } // Referencer til post
+        public ObjectId UserId { get; set; } // Reference til comment ejeren
+        public ObjectId BlogId { get; set; } // Reference til blogid
+        public ObjectId PostId { get; set; } // Reference til postid
         public string Content { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow; // Tidsstempel
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-        // tilføjet - username på bruger der tilføjer kommentar
-        public string Username { get; set; }
+        public string PostAuthor { get; set; } // username på post ejeren/author
     }
 }

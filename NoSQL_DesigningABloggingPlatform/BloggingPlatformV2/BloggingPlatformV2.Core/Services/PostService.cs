@@ -35,15 +35,13 @@ namespace BloggingPlatformV2.Core.Services
             await _postRepository.UpdatePostContent(postId, newContent);
         }
 
-        //tilføjet
         public async Task UpdateUsernameInPosts(ObjectId userId, string newUsername)
         {
             var filter = Builders<Post>.Filter.Eq(p => p.UserId, userId);
-            var update = Builders<Post>.Update.Set(p => p.AuthorUsername, newUsername);
+            var update = Builders<Post>.Update.Set(p => p.PostAuthor, newUsername);
             await _postRepository.UpdatePosts(filter, update);
         }
 
-        // Henter alle kommentarer for et givent post
         public async Task<List<Comment>> GetCommentsByPostId(ObjectId postId)
         {
             return await _commentRepository.GetCommentsByPostId(postId);
